@@ -16,6 +16,9 @@ password_list = []
 
 # Listing Letters
 for picked_letter in range(0, nr_letters):
+
+    #password_list += random.choice(letters) --- This login also works. Both random.append and += logic works in same way
+
     password_list.append(random.choice(letters)) # Adding item to the end of the list
 
 # Listing Symbols
@@ -29,7 +32,15 @@ for picked_number in range(0, nr_numbers):
 # Randize the items in the list
 random.shuffle(password_list)
 
-# Join the items in the list into a string
-password =''.join(password_list)
+# # Join the items in the list into a string
+# password =''.join(password_list)
 
-print(f"Your generated password is: {password}")
+
+# Randomizing the password using For Loop
+final_password = ""
+
+for char in password_list:
+    final_password += char
+
+
+print(f"Your generated password is: {final_password}")
